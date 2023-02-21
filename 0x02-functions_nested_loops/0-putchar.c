@@ -3,17 +3,17 @@
 /**
  *main- Entry point
  *
- * Return: Always 0
+ *Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	char str[] = "_putchar";
+	char c[] = "_putchar";
 	int i;
 
-	for (i = 0; i != '\0'; i++)
+	for (i = 0; c[i] != '\0'; i++)
 	{
-		_putchar(str[i]);
+		_putchar(c[i]);
 	}
 	_putchar('\n');
 	return (0);
