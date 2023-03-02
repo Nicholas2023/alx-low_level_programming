@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * rot13 - Entry point
@@ -11,31 +12,20 @@ char *rot13(char *str)
 {
 	int i, j;
 	char *rot_13 = str;
+	char *alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *rot13 = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
+		char *p = strchr(alpha, str[i]);
+
+		if (p != NULL)
 		{
-			for (j = 0; j < 13; j++)
-			{
-				str[i]++;
-				if (str[i] > 'z')
-				{
-					str[i] = 'a';
-				}
-			}
-		}
-		else if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			for (j = 0; j < 13; j++)
-			{
-				str[i]++;
-				if (str[i] > 'Z')
-				{
-					str[i] = 'A';
-				}
-			}
+			int index = p - alpha;
+
+			str[i] = rot13[index];
 		}
 	}
+
 	return (rot_13);
 }
