@@ -20,7 +20,9 @@ char *rot13(char *str)
 			{
 				str[i]++;
 				if (str[i] > 'z')
+				{
 					str[i] = 'a';
+				}
 			}
 		}
 		else if (str[i] >= 'A' && str[i] <= 'Z')
@@ -29,7 +31,9 @@ char *rot13(char *str)
 			{
 				str[i]++;
 				if (str[i] > 'Z')
+				{
 					str[i] = 'A';
+				}
 			}
 		}
 	}
