@@ -2,47 +2,45 @@
 #include <stdio.h>
 
 /**
- * simple_print_buffer - print buffer in hexa
- * @buffer: The address of the memory to print
- * @sixe: The size of the memory to print
+ * simple_print_buffer - prints buffer in hexa
+ * @buffer: the address of memory to print
+ * @size: the size of the memory to print
  *
- * Return: Nothing
+ * Return: Nothing.
  */
-
 void simple_print_buffer(char *buffer, unsigned int size)
 {
-	unsigned int i;
+        unsigned int i;
 
-	i = 0;
-	while (i < size)
-	{
-		if (i % 10)
-		{
-			printf(" ");
-		}
-		if (!(i % 10) && i)
-		{
-			printf("\n");
-		}
-		printf("0x%02x", buffer[i]);
-		i++;
-	}
-	printf("\n");
+        i = 0;
+        while (i < size)
+        {
+                if (i % 10)
+                {
+                        printf(" ");
+                }
+                if (!(i % 10) && i)
+                {
+                        printf("\n");
+                }
+                printf("0x%02x", buffer[i]);
+                i++;
+        }
+        printf("\n");
 }
 
 /**
- * main - check the code
+ * main - check the code for ALX School students.
  *
- * Return: Always 0
+ * Return: Always 0.
  */
-
 int main(void)
 {
-	char buffer[98] = {0x00};
+    char buffer[98] = {0x00};
 
-	simple_print_buffer(buffer, 98);
-	_memset(buffer, 0x01, 95);
-	printf("-------------------------------------------------\n");
-	simple_print_buffer(buffer, 98);
-	return (0);
+    simple_print_buffer(buffer, 98);
+    _memset(buffer, 0x01, 95);
+    printf("-------------------------------------------------\n");
+    simple_print_buffer(buffer, 98);
+    return (0);
 }
