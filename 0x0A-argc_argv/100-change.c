@@ -1,42 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <stdbool.h>
 
-/**
- * coinConverter - Helper function that does all the mathematics
- * @i: Passed in variable from main for calculations
- * Return: The number of coins needed minimum for the passed in variable
- */
-int coinConverter(int i)
-{
-	int count = 0;
-
-	while (i != 0)
-	{
-		if (i % 10 == 9 || i % 10 == 7)
-			i -= 2;
-		else if (i % 25 == 0)
-			i -= 25;
-		else if (i % 10 == 0)
-			i -= 10;
-		else if (i % 5 == 0)
-			i -= 5;
-			else if (i % 2 == 0)
-		{
-			if (i % 10 == 6)
-				i -= 1;
-			else
-				i -= 2;
-		}
-		else
-			i -= 1;
-
-		count++;
-	}
-
-	return (count);
-}
 
 /**
  * main - Takes in exactly one argument for minimum coin count
@@ -44,11 +8,10 @@ int coinConverter(int i)
  * @argv: Array name
  * Return: 0 if exactly 1 argument is passed into this program, 1 otherwise
  */
+
 int main(int argc, char *argv[])
 {
-	int i, coin;
-
-	coin = 0;
+	int cents, coins = 0;
 
 	if (argc != 2)
 	{
@@ -56,17 +19,25 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	i = atoi(argv[1]);
+	cents = atoi(argv[1]);
 
-	if (i < 0)
-		printf("0\n");
-
-	else
+	if (cents < 0)
 	{
-		coin = coinConverter(i);
-
-		printf("%d\n", coin);
+		printf("0\n");
+		return (0);
 	}
+	coins += cents / 25;
+	cents %= 25;
+	coins += cents / 10;
+	cents %= 10;
 
+	coins += cents / 5;
+	cents %= 5;
+
+	coins += cents / 2;
+	cents %= 2;
+	coins += cents;
+
+	printf("%d\n", coins);
 	return (0);
 }
