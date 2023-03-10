@@ -2,18 +2,18 @@
 
 /**
  * _isalpha - Entry point
- * @c: the integer value it receives
- * Description: checks if alphabet
- * Return: 1 if true. 0 if false
+ * Description: Checks if character is an alphabet
+ * @c : The integer value it receives
+ * Return: 1 if true. 0 if false.
  */
 
 int _isalpha(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{
-	return (1);
+		return (1);
 	}
-	else if (c >= 'A' && c <= 'Z')
+	else if (c >= 'A' && c <= 'z')
 	{
 		return (1);
 	}

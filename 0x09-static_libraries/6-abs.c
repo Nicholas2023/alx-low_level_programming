@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _abs - Entry point
- * @n: n is an integer
- * Description: prints the absolute value of an integer
- * Return: int
+ *_abs- Entry point
+ *Description: computes absolute values of integers
+ *@n: function argument
+ *Return: Absolute value of integers.
  */
 
 int _abs(int n)
