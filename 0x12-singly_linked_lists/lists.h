@@ -1,20 +1,22 @@
-#ifndef LIST_H
-#define LIST_H
+#ifndef LISTS_H
+#define LISTS_H
+
+/*
+* Desc: header file containinf prototypes and definitions
+*	for all functions and types written in this proj
+*/
+
 #include <stdlib.h>
-/**
- * Desc: Contains header files for all tasks contained in this project
- *
- */
 
 /**
  * struct list_s - singly linked list
- * @str: string - (Malloc'ed string)
+ * @str: string - (malloc'ed string)
  * @len: length of the string
- * @next: Point to the next string
+ * @next: points to the next node
  *
- * Description: Singly linked list node structure
+ * Description: singly linked list node structure
+ *              for Holberton project
  */
-
 typedef struct list_s
 {
 	char *str;
