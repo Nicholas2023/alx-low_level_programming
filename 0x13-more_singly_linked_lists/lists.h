@@ -1,23 +1,20 @@
 #ifndef LISTS_H
 #define LISTS_H
 
-/**
- * Desc - Header file containing all the prototypes and structures
- * used in this singly lists repository
- *
+/*
+ * Desc: Header file containing prototypes and structures used in this task
  */
 
 #include <stdlib.h>
 
 /**
- * struct listint_s - Structure definition for nodes
+ * struct listint_s - singly linked list
  * @n: integer
  * @next: points to the next node
  *
  * Description: singly linked list node structure
- *
+ * for Holberton project
  */
-
 typedef struct listint_s
 {
 	int n;
