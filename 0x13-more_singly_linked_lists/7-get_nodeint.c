@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * get_nodeint_index - returns nth node of list_t list
+ * get_nodeint_at_index - returns nth node of list_t list
  * @head: A pointer to the head node of listint_t
  * @index: The node's index to be printed
  *
