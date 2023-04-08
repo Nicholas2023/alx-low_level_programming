@@ -10,7 +10,7 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int mask;
+	unsigned long int nick;
 
 	/*Check if the index is within range*/
 
@@ -19,7 +19,7 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	/*Check if bit at the stated index is set*/
 
-	mask = (1UL << index);
+	nick = (1UL << index);
 
-	return ((n & mask) != 0);
+	return ((n & nick) != 0);
 }
