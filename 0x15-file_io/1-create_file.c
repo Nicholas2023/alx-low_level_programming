@@ -11,7 +11,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	/*Variable declaration*/
-	int f_open, f_read, f_write, len = 0;
+	int f_open, f_read = 0, f_write;
 
 	/*Check if filename if NULL*/
 	if (!filename)
@@ -25,12 +25,10 @@ int create_file(const char *filename, char *text_content)
 	/*Check if text_content is NULL*/
 	if (text_content == NULL)
 		text_content = "";
-	else if (text_content != NULL)
-	{
-		/*Calculate the number of characters in text_content*/
-		for (f_read = 0; text_content[len] != '\0';)
-		len++;
-	}
+
+	/*Calculate the number of characters in text_content*/
+	for (f_read = 0; text_content[f_read] != '\0';)
+		f_read++;
 
 	/*Write text_content to the file*/
 	f_write = write(f_open, text_content, f_read);
