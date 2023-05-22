@@ -1,3 +1,5 @@
 #!/bin/bash
-wget -P /tmp https://github.com/Nicholas2023/alx-low_level_programming/raw/master/0x18-dynamic_libraries/nrandom.so.zip
-export LD_PRELOAD=/tmp/nrandom.so.zip
+echo "int rand() { return <WINNING_NUMBER>; }" > rand.c
+gcc -shared -o rand.so -fPIC rand.c
+export LD_PRELOAD=$PWD/rand.so
+
