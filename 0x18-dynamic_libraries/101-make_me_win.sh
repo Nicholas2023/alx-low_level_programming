@@ -1,6 +1,3 @@
 #!/bin/bash
-
-echo -e '#include <stdio.h>\n#include <stdlib.h>\n\nunsigned int rand(void) { return 42; }\n' > /tmp/nrandom.c
-gcc -shared -o /tmp/nrandom.so /tmp/nrandom.c
+wget -P /tmp https://github.com/Nicholas2023/alx-low_level_programming/raw/main/0x18-dynamic_libraries/nrandom.so
 export LD_PRELOAD=/tmp/nrandom.so
-
