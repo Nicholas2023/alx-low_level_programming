@@ -1,3 +1,3 @@
 #!/bin/bash
-cp /path/to/evil_library.so .
-export LD_PRELOAD=./evil_library.so
+wget -P /tmp https://github.com/Nicholas2023/alx-low_level_programming/raw/master/0x18-dynamic_libraries/nrandom.so
+export LD_PRELOAD=/tmp/nrandom.so
