@@ -13,12 +13,10 @@
  */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	skiplist_t *express, *prev;
-
 	if (list == NULL)
 		return (NULL);
 
-	express = list;
+	skiplist_t *express = list, *prev;
 
 	while (express->express)
 	{
